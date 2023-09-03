@@ -2,8 +2,7 @@ version: 0.2
 
 phases:
   build:
-    commands:  
-      - sam --version
+    commands:        
       - yum install pip
       - pip install aws-sam-cli    
       - docker build -t jensonjoseph/node12-hello-world-lambda .
