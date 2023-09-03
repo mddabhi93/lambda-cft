@@ -2,7 +2,8 @@ version: 0.2
 
 phases:
   build:
-    commands:      
+    commands:  
+      - pip install aws-sam-cli    
       - docker build -t jensonjoseph/node12-hello-world-lambda .
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 712336116804.dkr.ecr.us-east-1.amazonaws.com
       - docker build -t lambda-container .
