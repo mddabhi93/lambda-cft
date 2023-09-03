@@ -10,7 +10,7 @@ Resources:
         Fn::GetAtt:
         - TestNode12LambdaRole
         - Arn
-      ImageUri: {aws_account_id}.dkr.ecr.us-east-1.amazonaws.com/lambda-container:latest
+      ImageUri: 967756262698.dkr.ecr.us-east-1.amazonaws.com/lambda-container:latest
       Timeout: 300
   TestNode12LambdaRole:
     Type: AWS::IAM::Role
