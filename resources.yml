@@ -18,7 +18,10 @@ Resources:
           Properties:
             Schedule: cron(0/1 * * * ? *)
             Description: Sample Lambda function scheduling with SAM
-            Enabled: True            
+            Enabled: True
+      InlineCode: |
+        def handler(event, context):
+            return {'body': 'Hello World! Wooow', 'statusCode': 200}            
   TestNode12LambdaRole:
     Type: AWS::IAM::Role
     Properties:
