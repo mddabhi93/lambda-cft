@@ -19,9 +19,7 @@ Resources:
             Schedule: cron(0/1 * * * ? *)
             Description: Sample Lambda function scheduling with SAM
             Enabled: True
-            input:
-              key1: mahesh
-              key2: dabhi
+            input: '{"key": "value"}'            
   TestNode12LambdaRole:
     Type: AWS::IAM::Role
     Properties:
