@@ -12,6 +12,11 @@ Resources:
         - Arn
       ImageUri: 967756262698.dkr.ecr.us-east-1.amazonaws.com/lambda-container:latest
       Timeout: 300
+      events:
+        - schedule:
+          rate: rate(1 minutes)
+          input: '{"key": "Goal"}'
+          enabled: true
       Events:
         ScheduledEvent:
           Type: Schedule
@@ -19,6 +24,9 @@ Resources:
             Schedule: cron(0/1 * * * ? *)
             Description: Sample Lambda function scheduling with SAM
             Enabled: True
+            input:
+              key1: value1
+              key2: value2
   TestNode12LambdaRole:
     Type: AWS::IAM::Role
     Properties:
