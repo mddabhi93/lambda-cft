@@ -12,6 +12,13 @@ Resources:
         - Arn
       ImageUri: 967756262698.dkr.ecr.us-east-1.amazonaws.com/lambda-container:latest
       Timeout: 300
+      Events:
+        ScheduledEvent:
+          Type: Schedule
+          Properties:
+            Schedule: cron(0/1 * * * ? *)
+            Description: Sample Lambda function scheduling with SAM
+            Enabled: True
   TestNode12LambdaRole:
     Type: AWS::IAM::Role
     Properties:
