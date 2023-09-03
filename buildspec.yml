@@ -4,7 +4,7 @@ phases:
   build:
     commands:      
       - docker build -t jensonjoseph/node12-hello-world-lambda .
-     # - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 712336116804.dkr.ecr.us-east-1.amazonaws.com
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 712336116804.dkr.ecr.us-east-1.amazonaws.com
       - docker build -t lambda-container .
       - docker tag lambda-container:latest 712336116804.dkr.ecr.us-east-1.amazonaws.com/lambda-container:latest
       - docker push 712336116804.dkr.ecr.us-east-1.amazonaws.com/lambda-container:latest
